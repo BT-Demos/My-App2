@@ -19,18 +19,18 @@ metadata:
         - prod
 jobs:
   pre-prod:
-    environment: pre-prod
     uses: ./.cloudbees/workflows/deployer.yaml
     with:
       manifest: ${{ inputs.manifest }}
       environment: ${{ job.environment }}
+    secrets: inherit
   prod:
     needs: EM_approval
-    environment: prod
     uses: ./.cloudbees/workflows/deployer.yaml
     with:
       manifest: ${{ inputs.manifest }}
       environment: ${{ job.environment }}
+    secrets: inherit
   EM_approval:
     needs:
       - pre-prod
