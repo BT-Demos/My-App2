@@ -14,7 +14,7 @@ on:
 jobs:
   MyAppBE:
     if: ${{ fromJSON(inputs.manifest)['Backend-CBCI']['Backend-CBCI'].deploy }}
-    uses: BT-Demos/My-App/.cloudbees/workflows/deployArtifact.yaml
+    uses: BT-Demos/My-App2/.cloudbees/workflows/deployArtifact.yaml
     with:
       artifact-id: ${{ fromJSON(inputs.manifest)['Backend-CBCI']['Backend-CBCI'].id }}
       environment: ${{ inputs.environment }}
