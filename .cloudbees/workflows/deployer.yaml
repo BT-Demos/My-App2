@@ -12,12 +12,6 @@ on:
         required: true
 
 jobs:
-  MyAppFE:
-    if: ${{ fromJSON(inputs.manifest)['Frontend-GHA']['Frontend-GHA'].deploy }}
-    uses: BT-Demos/My-App/.cloudbees/workflows/deployArtifact.yaml
-    with:
-      artifact-id: ${{ fromJSON(inputs.manifest)['Frontend-GHA']['Frontend-GHA'].id }}
-      environment: ${{ inputs.environment }}
   MyAppBE:
     if: ${{ fromJSON(inputs.manifest)['Backend-CBCI']['Backend-CBCI'].deploy }}
     uses: BT-Demos/My-App/.cloudbees/workflows/deployArtifact.yaml
