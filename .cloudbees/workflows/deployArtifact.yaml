@@ -21,7 +21,7 @@ jobs:
         with:
           url: ${{ vars.CJOC_URL }}
           username: ${{ vars.CJOC_USERNAME }}
-          token: ${{ secrets.CJOC_TOKEN }}
+          token: ${{ vars.CJOC_TOKEN }}
           job-name: Aruna Testing/sample_deploy
       - name: Inform system that an artifact version was deployed
         kind: deploy
